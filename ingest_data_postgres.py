@@ -7,12 +7,32 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
+# create a method to open .txt files that contain username and password
+un_file_name = "/Users/itech88/Documents/Secure/un.txt"
+pw_file_name = "/Users/itech88/Documents/Secure/pw.txt"
+
+
+def get_username_password(un_file_name, pw_file_name):
+    # open the file containing the username
+    un_file = open(un_file_name, "r")
+    # read the username
+    username = un_file.read()
+    # close the file
+    un_file.close()
+    # open the file containing the password
+    pw_file = open(pw_file_name, "r")
+    # read the password
+    password = pw_file.read()
+    # close the file
+    pw_file.close()
+    # return the username and password
+    return username, password
+
 
 def ingest_data_postgres(df, table_name):
-    # remember to replace with .txt file
-    username = "postgres"
-    password = "your_password"
-    database = "Insurance_2022"
+    # get the username and password
+    username, password = get_username_password(un_file_name, pw_file_name)
+    database = "historical_reports_2022"
 
     DATABASE_URI = (
         "postgresql+psycopg2://"
