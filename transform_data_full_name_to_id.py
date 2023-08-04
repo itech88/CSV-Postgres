@@ -23,6 +23,13 @@ def transform_data_full_name_to_id(df):
             ", ", n=1, expand=True
         )
         person_type = "Patient"
+    elif df.columns[0] == "Patients":
+        # if the first column is 'Patient'
+        # split the 'Patient' column into 'first_name' and 'last_name' columns
+        df[["last_name", "first_name"]] = df["Patients"].str.split(
+            ", ", n=1, expand=True
+        )
+        person_type = "Patient"
     else:
         # if the first column is not 'Provider' or 'Patient'
         print("The first column is not 'Provider(s)' or 'Patient; Cannot parse name: ")
@@ -35,7 +42,7 @@ def transform_data_full_name_to_id(df):
         print("Dropped Providers column")
     elif person_type == "Patient":
         print("Patient detected")
-        df.drop("Patient", axis="columns", inplace=True)
+        df.drop("Patients", axis="columns", inplace=True)
         print("Dropped Patient column")
     else:
         print("Unknown person type, first column will not be dropped.")

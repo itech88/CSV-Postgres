@@ -8,7 +8,8 @@ def transform_data_remove_subtotal_col(df):
     # in this order, providers will never be a first column becaues the transformation that happened earlier
     first_column_headers = [
         "employee_id",
-        "patient_id" "Locations",
+        "patient_id",
+        "Locations",
         "Card Type",
         "Code",
     ]
