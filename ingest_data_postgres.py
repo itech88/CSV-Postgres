@@ -1,46 +1,35 @@
 import logging
 from sqlalchemy import create_engine, exc
 import pandas as pd
+import os
+
+# from config import un_file_name, pw_file_name, database_file_name
+from dotenv import load_dotenv, find_dotenv
+
 
 # Setup logging
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-# create a method to open .txt files that contain username and password
-un_file_name = "/Users/itech88/Documents/Secure/un.txt"
-pw_file_name = "/Users/itech88/Documents/Secure/pw.txt"
-database_file_name = "/Users/itech88/Documents/Secure/db.txt"
 
-
-def get_username_password(un_file_name, pw_file_name, database_file_name):
+def get_username_password():
+    # env_path = os.path.join(".", ".env")
+    load_dotenv(find_dotenv())
+    # load_dotenv(env_path)
     # open the file containing the username
-    un_file = open(un_file_name, "r")
-    # read the username
-    username = un_file.read()
-    # close the file
-    un_file.close()
-    # open the file containing the password
-    pw_file = open(pw_file_name, "r")
-    # read the password
-    password = pw_file.read()
-    # close the file
-    pw_file.close()
-    # open the file containing the database name
-    db_file = open(database_file_name, "r")
-    # read the database name
-    database = db_file.read()
-    # close the file
-    db_file.close()
+    # un_file = open(un_file_name, "r")
+    username = os.getenv("USERNAME")
+    password = os.getenv("PASSWORD")
+    database = os.getenv("DB")
+
     # return the username, password and database name
     return username, password, database
 
 
 def ingest_data_postgres(df, table_name):
     # get the username and password
-    username, password, database = get_username_password(
-        un_file_name, pw_file_name, database_file_name
-    )
+    username, password, database = get_username_password()
 
     DATABASE_URI = (
         "postgresql+psycopg2://"
@@ -56,7 +45,7 @@ def ingest_data_postgres(df, table_name):
     try:
         # Use the to_sql function to write data from your DataFrame into PostgreSQL
         logging.info("Attempting to write data to PostgreSQL table: %s", table_name)
-
+        # change the name of the dataframe and do column transformation
         df.to_sql(
             table_name,
             engine,

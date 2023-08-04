@@ -1,12 +1,15 @@
 import pandas as pd
+import os
+from config import parent_dir, input_path, input_filename
 
+# import all the helper modules/micro-services
 # import get_data_csv
 # import copy_to_directory
 # import copy_to_s3
 import transform_data_currency
 from transform_data_remove_subtotal_col import transform_data_remove_subtotal_col
 import transform_data_full_name_to_id
-import os
+
 
 # import transform_person_type_to_id
 import transform_data_rename_percentage
@@ -15,30 +18,31 @@ import transform_data_rename_percentage
 import stage_data_for_ingest
 import ingest_data_postgres
 
-# set the path for the CSV to be consumed
-
 
 # make a function to set variables for the input and output files
 def set_input_output_variables():
-    # parent directory that holds the raw files and the processed files
-    parent_dir = "/Users/itech88/Desktop/Projects/Palmdale/Revolution 22-23/Insurances/VSP/VSP Private"
-    # the files will always be in the Raw Reports folder
-    input_path = "/Users/itech88/Desktop/Projects/Palmdale/Revolution 22-23/Insurances/VSP/VSP Private/Raw Reports"
-    # name the variable for the CSV file
-    input_title = "VSP Private 2022"
-    input_filename = input_title + ".csv"
+    # most_recent_file = os.listdir(input_path)[-1]
+
+    # read the path inside input_filename.txt
+    with open(input_filename, "r") as file:
+        csv_path = file.readline().strip()  # assume the path is on the first line
+    # get the base name of the CSV file
+    csv_basename = os.path.basename(csv_path)
+    # remove the .csv extension
+    input_title = os.path.splitext(csv_basename)[0]
 
     # in the future, need to add functions to get the CSV from Revolution APIs
     # and copy the CSV to the S3 bucket or staging area
     # but for now we can directly process the CSV file
-    process_csv_file(input_path, input_title, input_filename, parent_dir)
+    process_csv_file(csv_path, input_title, parent_dir)
 
 
-def process_csv_file(path, title, filename, parent_dir):
+def process_csv_file(csv_path, title, parent_dir):
     # construct the full path to the CSV file
-    full_input_path = os.path.join(path, filename)
+    # full_input_path = os.path.join(path, filename)
+    # print(full_input_path)
     # read the data from the CSV file
-    df = pd.read_csv(full_input_path)
+    df = pd.read_csv(csv_path)
 
     # identify all the currency columns and remove dollar signs
     transform_data_currency.transform_data_currency(df)
