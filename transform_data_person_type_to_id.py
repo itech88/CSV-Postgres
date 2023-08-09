@@ -1,6 +1,7 @@
 import pandas as pd
+from timer_decorator import timer
 
-
+@timer
 def transform_data_person_type_to_id(df, person_type):
     if person_type == "Provider":
         # add a new column 'employee_id' with default value 'Unknown'

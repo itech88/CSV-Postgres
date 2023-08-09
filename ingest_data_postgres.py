@@ -2,6 +2,9 @@ import logging
 from sqlalchemy import create_engine, exc
 import pandas as pd
 import os
+from timer_decorator import timer
+from logging_config import configure_logging
+logger = configure_logging(__name__)
 
 # from config import un_file_name, pw_file_name, database_file_name
 from dotenv import load_dotenv, find_dotenv
@@ -12,7 +15,7 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-
+@timer
 def get_username_password():
     # env_path = os.path.join(".", ".env")
     load_dotenv(find_dotenv())
@@ -26,7 +29,7 @@ def get_username_password():
     # return the username, password and database name
     return username, password, database
 
-
+@timer
 def ingest_data_postgres(df, table_name):
     # get the username and password
     username, password, database = get_username_password()
@@ -41,6 +44,7 @@ def ingest_data_postgres(df, table_name):
     )
 
     engine = create_engine(DATABASE_URI)
+    logger.info("Successfully CONNected to PostgreSQL database: %s", database)
 
     try:
         # Use the to_sql function to write data from your DataFrame into PostgreSQL
@@ -54,7 +58,7 @@ def ingest_data_postgres(df, table_name):
             method="multi",  # Insert data in chunks
         )
 
-        logging.info("Successfully wrote data to PostgreSQL table: %s", table_name)
+        logging.info("Successfully Wrote data to PostgreSQL table: %s", table_name)
 
     except exc.SQLAlchemyError as e:
         logging.error("SQLAlchemy error occurred: %s", e)

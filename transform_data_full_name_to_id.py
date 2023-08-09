@@ -1,8 +1,13 @@
 import pandas as pd
 import transform_data_person_type_to_id
+from datetime import datetime
+from timer_decorator import timer
+from logging_config import configure_logging
+logger = configure_logging(__name__)
 
-
+@timer
 def transform_data_full_name_to_id(df):
+    
     person_type = ""
     # if the first column is 'Provider' or 'Providers'
     # split the 'Providers' column into 'first_name' and 'last_name' columns
@@ -32,20 +37,23 @@ def transform_data_full_name_to_id(df):
         person_type = "Patient"
     else:
         # if the first column is not 'Provider' or 'Patient'
-        print("The first column is not 'Provider(s)' or 'Patient; Cannot parse name: ")
+        ic(df.columns[0])
+        logger.warning("The first column is not 'Provider(s)' or 'Patient; Cannot parse name: ")
         person_type = "Unknown"
 
     # remove the former named first column
     if person_type == "Provider":
-        print("Provider detected")
+        ic(person_type)
+        logger.info("Provider detected")
         df.drop("Providers", axis="columns", inplace=True)
-        print("Dropped Providers column")
+        logger.info("Dropped Providers column")
     elif person_type == "Patient":
-        print("Patient detected")
+        ic(person_type)
+        logger.info("Patient detected")
         df.drop("Patients", axis="columns", inplace=True)
-        print("Dropped Patient column")
+        logger.info("Dropped Patient column")
     else:
-        print("Unknown person type, first column will not be dropped.")
+        logger.warning("Unknown person type, first column will not be dropped.")
 
     # add a new column 'employee_id' and drop the former named first column
     transform_data_person_type_to_id.transform_data_person_type_to_id(df, person_type)
