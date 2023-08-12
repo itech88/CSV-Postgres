@@ -1,0 +1,1 @@
+2023-08-11 10:29:47,555 - transform_data_currency - INFO - Dollar columns found. Removing dollar sign and converting to float.

@@ -7,29 +7,37 @@ logger = configure_logging(__name__)
 # or another field type, such as Patients, it depends on report
 @timer
 def transform_data_remove_subtotal_col(df):
-    # identify all possible column headers for the first column
-    # in this order, providers will never be a first column becaues the transformation that happened earlier
-    first_column_headers = [
-        "employee_id",
-        "patient_id",
-        "Locations",
-        "Card Type",
-        "Code",
-    ]
+    # a subtotal is a cell that is the last row in the dataframe
     
-    # if the first column is in the list of possible column headers
-    if df.columns[0] in first_column_headers:
-        # remove the subtotal row where 'first_column_headers' is null or empty
-        df = df[df[df.columns[0]].notna() & df[df.columns[0]].ne("")]
-        logger.info("Subtotal column removed.")
-        ic(df.head())
-        ic(df.tail())
-           
-    else:
-        logger.warning(
-            f"The first column is not in list of possible column headers: [{first_column_headers}]"
-        )
-        ic(df.columns[0])
-        logger.info("The first column is named: " + df.columns[0])
-        
+    # a subtotal is a cell that is the last row in the dataframe
+    for col in df.columns:
+        last_row = df[col].iloc[-1]
+        # identify if all the values in the column are numeric
+        col_is_numeric = pd.to_numeric(df[col], errors='coerce').notnull().all()
+        # if the column is numeric, then it is a candidate for a subtotal column
+        if col_is_numeric:
+            logger.info(f"Column is numeric: {col}")
+            ic(df.tail())
+            logger.info(f"Last row: {last_row}")
+            evaluate = df[col].iloc[:-1].sum()
+            ic(evaluate)
+            # if last_row is a sum of all the cells in that column except the last one, then it is a subtotal
+            if last_row == evaluate:  # exclude the last row in the sum
+                subtotal_col = col
+                logger.info(f"Subtotal column found: {subtotal_col}")
+                # now remove the entire row where the subtotal is found
+                df = df[df[col] != last_row]
+                logger.info(f"Subtotal column removed: {subtotal_col}")
+                ic(df.tail())
+                # after a subtotal column is found, exit the loop since the subtotal row has been removed for all columns
+                break
+            else:
+                logger.info(f"Subtotal column not found: Here's the tail")
+                ic(df.tail())
+                logger.info(df.tail())
+        else:
+            logger.info(f"Column is not numeric: {col}")
+            logger.info(f"Last row: {last_row}")
+            continue
+
     return df

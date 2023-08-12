@@ -1,0 +1,3 @@
+2023-08-11 11:24:52,214 - WIP_transform_data_currency - INFO - Dollar columns found: ['amount', 'balance']
+2023-08-11 11:25:06,005 - WIP_transform_data_currency - WARNING - Failed to convert column amount to float.
+2023-08-11 11:25:18,822 - WIP_transform_data_currency - INFO - Successfully converted column balance to float.

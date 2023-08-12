@@ -1,0 +1,15 @@
+2023-08-12 12:32:56,889 - transform_data_currency - INFO - Dollar columns found: ['gross', 'discounts', 'taxes', 'adjustments', 'net']
+2023-08-12 12:32:56,891 - transform_data_currency - INFO - Successfully converted column 'gross' to float.
+2023-08-12 12:32:56,892 - transform_data_currency - INFO - Successfully converted column 'discounts' to float.
+2023-08-12 12:32:56,892 - transform_data_currency - INFO - Successfully converted column 'taxes' to float.
+2023-08-12 12:32:56,893 - transform_data_currency - INFO - Successfully converted column 'adjustments' to float.
+2023-08-12 12:32:56,893 - transform_data_currency - INFO - Successfully converted column 'net' to float.
+2023-08-12 12:32:56,935 - transform_data_full_name_to_id - WARNING - The first column is not 'Provider(s)' or 'Patient; Cannot parse name: 
+2023-08-12 12:32:56,935 - transform_data_full_name_to_id - WARNING - Unknown person type, first column will not be dropped.
+2023-08-12 12:33:29,456 - transform_data_remove_subtotal_col - INFO - Column is not numeric: type
+2023-08-12 12:33:29,458 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 12:33:37,198 - transform_data_remove_subtotal_col - INFO - Column is numeric: qty
+2023-08-12 12:33:54,969 - transform_data_remove_subtotal_col - INFO - Last row: 258
+2023-08-12 12:33:54,973 - transform_data_remove_subtotal_col - INFO - Subtotal column found: qty
+2023-08-12 12:33:54,978 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: qty
+2023-08-12 12:34:25,150 - transform_data_remove_subtotal_col - INFO - Column is numeric: gross

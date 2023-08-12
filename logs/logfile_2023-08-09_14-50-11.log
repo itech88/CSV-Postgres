@@ -1,0 +1,7 @@
+2023-08-09 14:50:45,086 - transform_data_currency - WARNING - No dollar columns found.
+2023-08-09 14:50:45,103 - transform_data_full_name_to_id - WARNING - The first column is not 'Provider(s)' or 'Patient; Cannot parse name: 
+2023-08-09 14:50:45,103 - transform_data_full_name_to_id - WARNING - Unknown person type, first column will not be dropped.
+2023-08-09 14:50:45,106 - transform_data_remove_subtotal_col - INFO - Subtotal column removed.
+2023-08-09 14:50:45,136 - transform_data_rename_percentage - INFO - Percentage column renamed.
+2023-08-09 14:50:45,138 - transform_data_percentage_to_int - INFO - Percentage column converted to integers.
+2023-08-09 14:50:45,153 - stage_data_for_ingest - INFO - Processed data written to CSV file.

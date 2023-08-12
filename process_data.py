@@ -3,7 +3,7 @@ install() # this installs ic project wise to other modules
 from timer_decorator import timer
 import pandas as pd
 import os
-from logging_config import configure_logging
+from logging_config import configure_logging, check_log_file
 logger = configure_logging(__name__)
 from config import parent_dir, input_path, input_filename
 
@@ -11,6 +11,9 @@ from config import parent_dir, input_path, input_filename
 # import all the helper modules/micro-services
 # import copy_to_directory
 # import copy_to_s3
+
+# delete blank cols
+import transform_data_delete_blank_cols
 import transform_data_currency
 from transform_data_remove_subtotal_col import transform_data_remove_subtotal_col
 import transform_data_full_name_to_id
@@ -57,9 +60,10 @@ def set_input_output_variables():
 def process_csv_file(csv_path, title, parent_dir):
     # read the data from the CSV file
     df = pd.read_csv(csv_path)
+
+    # delete blank columns
+    transform_data_delete_blank_cols.transform_data_delete_blank_cols(df)  
     ic(df.head())
-    ic(df.tail())
-    
     # identify all the currency columns and remove dollar signs
     transform_data_currency.transform_data_currency(df)
     
@@ -80,6 +84,7 @@ def process_csv_file(csv_path, title, parent_dir):
     # ingest the data into the database
     ingest_data_postgres.ingest_data_postgres(df, title)
     logger.info("Pipeline completed.")
+    
 
 
 set_input_output_variables()
