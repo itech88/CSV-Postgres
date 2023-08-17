@@ -1,0 +1,42 @@
+2023-08-12 13:36:01,956 - transform_data_delete_blank_cols - INFO - Deleted blank column: [Unnamed: 0]
+2023-08-12 13:36:12,232 - transform_data_delete_blank_cols - INFO - Deleted blank column: [Unnamed: 12]
+2023-08-12 13:36:12,300 - transform_data_currency - INFO - Dollar columns found: ['amount', 'balance']
+2023-08-12 13:36:12,302 - transform_data_currency - WARNING - Failed to convert column 'amount' to float.
+2023-08-12 13:36:12,314 - transform_data_currency - WARNING - The row that failed is:     approval status  age   # payer patient invoice date service date  statement date  amount     balance
+100      NaN    NaN  NaN NaN   NaN     NaN          NaN          NaN             NaN     NaN  $19,996.50
+2023-08-12 13:36:12,314 - transform_data_currency - WARNING -     approval status  age   # payer patient invoice date service date  statement date  amount     balance
+100      NaN    NaN  NaN NaN   NaN     NaN          NaN          NaN             NaN     NaN  $19,996.50
+2023-08-12 13:36:12,325 - transform_data_currency - INFO - Successfully converted column 'balance' to float.
+2023-08-12 13:36:12,380 - transform_data_full_name_to_id - WARNING - The first column is not 'Provider(s)' or 'Patient; Cannot parse name: 
+2023-08-12 13:36:12,380 - transform_data_full_name_to_id - WARNING - Unknown person type, first column will not be dropped.
+2023-08-12 13:36:12,381 - transform_data_remove_subtotal_col - INFO - Column is not numeric: approval
+2023-08-12 13:36:12,381 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:36:12,382 - transform_data_remove_subtotal_col - INFO - Column is not numeric: status
+2023-08-12 13:36:12,382 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:36:12,382 - transform_data_remove_subtotal_col - INFO - Column is not numeric: age
+2023-08-12 13:36:12,382 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:36:12,382 - transform_data_remove_subtotal_col - INFO - Column is not numeric: #
+2023-08-12 13:36:12,382 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:36:12,383 - transform_data_remove_subtotal_col - INFO - Column is not numeric: payer
+2023-08-12 13:36:12,383 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:36:12,383 - transform_data_remove_subtotal_col - INFO - Column is not numeric: patient
+2023-08-12 13:36:12,383 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:36:12,384 - transform_data_remove_subtotal_col - INFO - Column is not numeric: invoice date
+2023-08-12 13:36:12,384 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:36:12,385 - transform_data_remove_subtotal_col - INFO - Column is not numeric: service date
+2023-08-12 13:36:12,385 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:36:12,385 - transform_data_remove_subtotal_col - INFO - Column is not numeric: statement date
+2023-08-12 13:36:12,385 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:36:12,386 - transform_data_remove_subtotal_col - INFO - Column is not numeric: amount
+2023-08-12 13:36:12,386 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:36:12,386 - transform_data_remove_subtotal_col - INFO - Column is numeric: balance
+2023-08-12 13:36:12,423 - transform_data_remove_subtotal_col - INFO - Last row: 19996.5
+2023-08-12 13:36:12,424 - transform_data_remove_subtotal_col - INFO - Subtotal column found: balance
+2023-08-12 13:36:12,425 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: balance
+2023-08-12 13:36:12,443 - transform_data_rename_percentage - WARNING - No '%' column found. Nothing renamed.
+2023-08-12 13:37:10,766 - transform_data_rename_hash - INFO - Rows about to be dropped where '#' column is NaN:
+2023-08-12 13:37:10,793 - transform_data_rename_hash - INFO - Empty DataFrame
+Columns: [approval, status, age, #, payer, patient, invoice date, service date, statement date, amount, balance]
+Index: []
+2023-08-12 13:37:18,682 - transform_data_rename_hash - INFO - Successfully dropped rows where '#' column is NaN.
+2023-08-12 13:37:24,575 - transform_data_rename_hash - INFO - Phone column renamed.

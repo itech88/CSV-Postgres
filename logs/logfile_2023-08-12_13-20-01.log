@@ -1,0 +1,67 @@
+2023-08-12 13:20:07,476 - transform_data_delete_blank_cols - INFO - Deleted blank column: [Unnamed: 0]
+2023-08-12 13:20:10,781 - transform_data_delete_blank_cols - INFO - Deleted blank column: [Unnamed: 12]
+2023-08-12 13:20:10,848 - transform_data_currency - INFO - Dollar columns found: ['amount', 'balance']
+2023-08-12 13:20:10,850 - transform_data_currency - WARNING - Failed to convert column 'amount' to float.
+2023-08-12 13:20:10,862 - transform_data_currency - WARNING - The row that failed is:     approval status  age   # payer patient invoice date service date  statement date  amount     balance
+100      NaN    NaN  NaN NaN   NaN     NaN          NaN          NaN             NaN     NaN  $19,996.50
+2023-08-12 13:20:10,862 - transform_data_currency - WARNING -     approval status  age   # payer patient invoice date service date  statement date  amount     balance
+100      NaN    NaN  NaN NaN   NaN     NaN          NaN          NaN             NaN     NaN  $19,996.50
+2023-08-12 13:20:10,875 - transform_data_currency - INFO - Successfully converted column 'balance' to float.
+2023-08-12 13:20:10,931 - transform_data_full_name_to_id - WARNING - The first column is not 'Provider(s)' or 'Patient; Cannot parse name: 
+2023-08-12 13:20:10,931 - transform_data_full_name_to_id - WARNING - Unknown person type, first column will not be dropped.
+2023-08-12 13:20:10,932 - transform_data_remove_subtotal_col - INFO - Column is not numeric: approval
+2023-08-12 13:20:10,932 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:20:10,932 - transform_data_remove_subtotal_col - INFO - Column is not numeric: status
+2023-08-12 13:20:10,932 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:20:10,933 - transform_data_remove_subtotal_col - INFO - Column is not numeric: age
+2023-08-12 13:20:10,933 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:20:10,933 - transform_data_remove_subtotal_col - INFO - Column is not numeric: #
+2023-08-12 13:20:10,933 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:20:10,933 - transform_data_remove_subtotal_col - INFO - Column is not numeric: payer
+2023-08-12 13:20:10,934 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:20:10,934 - transform_data_remove_subtotal_col - INFO - Column is not numeric: patient
+2023-08-12 13:20:10,934 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:20:10,934 - transform_data_remove_subtotal_col - INFO - Column is not numeric: invoice date
+2023-08-12 13:20:10,934 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:20:10,935 - transform_data_remove_subtotal_col - INFO - Column is not numeric: service date
+2023-08-12 13:20:10,935 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:20:10,935 - transform_data_remove_subtotal_col - INFO - Column is not numeric: statement date
+2023-08-12 13:20:10,935 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:20:10,936 - transform_data_remove_subtotal_col - INFO - Column is not numeric: amount
+2023-08-12 13:20:10,936 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:20:10,936 - transform_data_remove_subtotal_col - INFO - Column is numeric: balance
+2023-08-12 13:20:10,974 - transform_data_remove_subtotal_col - INFO - Last row: 19996.5
+2023-08-12 13:20:10,975 - transform_data_remove_subtotal_col - INFO - Subtotal column found: balance
+2023-08-12 13:20:10,976 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: balance
+2023-08-12 13:20:10,996 - transform_data_rename_percentage - WARNING - No '%' column found. Nothing renamed.
+2023-08-12 13:21:15,184 - transform_data_rename_hash - INFO - Rows dropped where '#' column is NaN.
+2023-08-12 13:21:15,187 - transform_data_rename_hash - INFO - Phone column renamed.
+2023-08-12 13:21:59,900 - transform_data_phone_hyphens - WARNING - Phone column does not contain ten numerical digits. Nothing formatted.
+2023-08-12 13:22:24,043 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174066452.0
+2023-08-12 13:22:30,067 - transform_data_phone_hyphens - WARNING - Irregular phone number: 173273508.0
+2023-08-12 13:22:40,394 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174114634.0
+2023-08-12 13:22:42,225 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174429391.0
+2023-08-12 13:22:48,385 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174444526.0
+2023-08-12 13:22:49,105 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174494461.0
+2023-08-12 13:22:50,437 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174497634.0
+2023-08-12 13:22:58,086 - transform_data_phone_hyphens - WARNING - Irregular phone number: 176713346.0
+2023-08-12 13:22:59,217 - transform_data_phone_hyphens - WARNING - Irregular phone number: 177134983.0
+2023-08-12 13:23:00,639 - transform_data_phone_hyphens - WARNING - Irregular phone number: 179101855.0
+2023-08-12 13:23:03,135 - transform_data_phone_hyphens - WARNING - Irregular phone number: 179103165.0
+2023-08-12 13:23:04,347 - transform_data_phone_hyphens - WARNING - Irregular phone number: 179104040.0
+2023-08-12 13:23:05,598 - transform_data_phone_hyphens - WARNING - Irregular phone number: 178423881.0
+2023-08-12 13:23:09,455 - transform_data_phone_hyphens - WARNING - Irregular phone number: 178424110.0
+2023-08-12 13:23:14,073 - transform_data_phone_hyphens - WARNING - Irregular phone number: 178427018.0
+2023-08-12 13:23:15,214 - transform_data_phone_hyphens - WARNING - Irregular phone number: 181486910.0
+2023-08-12 13:23:18,374 - transform_data_phone_hyphens - WARNING - Irregular phone number: 181208726.0
+2023-08-12 13:23:19,933 - transform_data_phone_hyphens - WARNING - Irregular phone number: 182066478.0
+2023-08-12 13:23:21,667 - transform_data_phone_hyphens - WARNING - Irregular phone number: 181294527.0
+2023-08-12 13:23:24,584 - transform_data_phone_hyphens - WARNING - Irregular phone number: 182921253.0
+2023-08-12 13:23:27,577 - transform_data_phone_hyphens - WARNING - Irregular phone number: 182921611.0
+2023-08-12 13:23:28,864 - transform_data_phone_hyphens - WARNING - Irregular phone number: 182865976.0
+2023-08-12 13:23:31,316 - transform_data_phone_hyphens - WARNING - Irregular phone number: 183535514.0
+2023-08-12 13:23:33,484 - transform_data_phone_hyphens - WARNING - Irregular phone number: 184567615.0
+2023-08-12 13:23:35,731 - transform_data_phone_hyphens - WARNING - Irregular phone number: 184567716.0
+2023-08-12 13:23:37,722 - transform_data_phone_hyphens - WARNING - Irregular phone number: 185249420.0
+2023-08-12 13:23:39,802 - transform_data_phone_hyphens - WARNING - Irregular phone number: 185250369.0
+2023-08-12 13:23:42,062 - transform_data_phone_hyphens - WARNING - Irregular phone number: 185256301.0

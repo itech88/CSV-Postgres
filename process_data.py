@@ -3,7 +3,7 @@ install() # this installs ic project wise to other modules
 from timer_decorator import timer
 import pandas as pd
 import os
-from logging_config import configure_logging, check_log_file
+from logging_config import configure_logging
 logger = configure_logging(__name__)
 from config import parent_dir, input_path, input_filename
 
@@ -16,12 +16,10 @@ from config import parent_dir, input_path, input_filename
 import transform_data_delete_blank_cols
 import transform_data_currency
 from transform_data_remove_subtotal_col import transform_data_remove_subtotal_col
-import transform_data_full_name_to_id
-
-# transform_person_type_to_id will be encapsulated in transform_data_full_name_to_id
-import transform_data_rename_percentage
-
-# transform_data_percentage_to_int will be encapsulated in transform_data_rename_percentage
+import transform_data_full_name_to_id # transform_person_type_to_id will be encapsulated in transform_data_full_name_to_id
+import transform_data_rename_percentage # transform_data_percentage_to_int will be encapsulated in transform_data_rename_percentage
+import transform_data_rename_hash # transform_data_phone_format will be encapsulated in transform_data_rename_hash
+import transform_data_add_col
 import stage_data_for_ingest
 import ingest_data_postgres
 
@@ -76,6 +74,10 @@ def process_csv_file(csv_path, title, parent_dir):
     # rename the '%' column to 'percentage'
     transform_data_rename_percentage.transform_data_rename_percentage(df)
        
+    # rename the '#' column to 'phone'
+    transform_data_rename_hash.transform_data_rename_hash(df)
+    # ad hoc transformation, ability to add any new columns needed
+    transform_data_add_col.transform_data_add_col(df)
     # transformations complete, time to stage the data for ingest
     df = stage_data_for_ingest.stage_data_for_ingest(df, title, parent_dir)
     ic(df.head())

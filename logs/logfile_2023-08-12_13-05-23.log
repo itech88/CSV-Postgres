@@ -1,0 +1,21 @@
+2023-08-12 13:05:23,852 - transform_data_currency - INFO - Dollar columns found: ['gross', 'discounts', 'taxes', 'adjustments', 'net']
+2023-08-12 13:05:23,853 - transform_data_currency - INFO - Successfully converted column 'gross' to float.
+2023-08-12 13:05:23,853 - transform_data_currency - INFO - Successfully converted column 'discounts' to float.
+2023-08-12 13:05:23,853 - transform_data_currency - INFO - Successfully converted column 'taxes' to float.
+2023-08-12 13:05:23,854 - transform_data_currency - INFO - Successfully converted column 'adjustments' to float.
+2023-08-12 13:05:23,854 - transform_data_currency - INFO - Successfully converted column 'net' to float.
+2023-08-12 13:05:23,865 - transform_data_full_name_to_id - WARNING - The first column is not 'Provider(s)' or 'Patient; Cannot parse name: 
+2023-08-12 13:05:23,866 - transform_data_full_name_to_id - WARNING - Unknown person type, first column will not be dropped.
+2023-08-12 13:05:23,866 - transform_data_remove_subtotal_col - INFO - Column is not numeric: type
+2023-08-12 13:05:23,866 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:05:23,866 - transform_data_remove_subtotal_col - INFO - Column is numeric: qty
+2023-08-12 13:05:23,876 - transform_data_remove_subtotal_col - INFO - Last row: 1178
+2023-08-12 13:05:23,876 - transform_data_remove_subtotal_col - INFO - Subtotal column found: qty
+2023-08-12 13:05:23,877 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: qty
+2023-08-12 13:05:23,883 - transform_data_rename_percentage - INFO - Percentage column renamed.
+2023-08-12 13:05:23,884 - transform_data_percentage_to_int - INFO - Percentage column converted to integers.
+2023-08-12 13:05:23,890 - stage_data_for_ingest - INFO - Processed data written to CSV file.
+2023-08-12 13:05:23,934 - ingest_data_postgres - INFO - Successfully CONNected to PostgreSQL database: historical_reports_2022
+2023-08-12 13:05:23,934 - root - INFO - Attempting to write data to PostgreSQL table: envolve_2022
+2023-08-12 13:05:24,116 - root - INFO - Successfully Wrote data to PostgreSQL table: envolve_2022
+2023-08-12 13:05:24,116 - __main__ - INFO - Pipeline completed.

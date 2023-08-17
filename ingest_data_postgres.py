@@ -53,7 +53,7 @@ def ingest_data_postgres(df, table_name):
         df.to_sql(
             table_name,
             engine,
-            if_exists="replace",  # If the table already exists, it will replace it.
+            if_exists="append",  # If the table already exists, it will replace it.
             index=False,  # Not writing the DataFrame's index to the database
             method="multi",  # Insert data in chunks
         )

@@ -1,0 +1,144 @@
+2023-08-12 13:23:54,713 - transform_data_delete_blank_cols - INFO - Deleted blank column: [Unnamed: 0]
+2023-08-12 13:23:55,671 - transform_data_delete_blank_cols - INFO - Deleted blank column: [Unnamed: 12]
+2023-08-12 13:23:55,705 - transform_data_currency - INFO - Dollar columns found: ['amount', 'balance']
+2023-08-12 13:23:55,706 - transform_data_currency - WARNING - Failed to convert column 'amount' to float.
+2023-08-12 13:23:55,710 - transform_data_currency - WARNING - The row that failed is:     approval status  age   # payer patient invoice date service date  statement date  amount     balance
+100      NaN    NaN  NaN NaN   NaN     NaN          NaN          NaN             NaN     NaN  $19,996.50
+2023-08-12 13:23:55,710 - transform_data_currency - WARNING -     approval status  age   # payer patient invoice date service date  statement date  amount     balance
+100      NaN    NaN  NaN NaN   NaN     NaN          NaN          NaN             NaN     NaN  $19,996.50
+2023-08-12 13:23:55,714 - transform_data_currency - INFO - Successfully converted column 'balance' to float.
+2023-08-12 13:23:55,731 - transform_data_full_name_to_id - WARNING - The first column is not 'Provider(s)' or 'Patient; Cannot parse name: 
+2023-08-12 13:23:55,731 - transform_data_full_name_to_id - WARNING - Unknown person type, first column will not be dropped.
+2023-08-12 13:23:55,731 - transform_data_remove_subtotal_col - INFO - Column is not numeric: approval
+2023-08-12 13:23:55,731 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:23:55,731 - transform_data_remove_subtotal_col - INFO - Column is not numeric: status
+2023-08-12 13:23:55,731 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:23:55,731 - transform_data_remove_subtotal_col - INFO - Column is not numeric: age
+2023-08-12 13:23:55,731 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:23:55,731 - transform_data_remove_subtotal_col - INFO - Column is not numeric: #
+2023-08-12 13:23:55,731 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Column is not numeric: payer
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Column is not numeric: patient
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Column is not numeric: invoice date
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Column is not numeric: service date
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Column is not numeric: statement date
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Column is not numeric: amount
+2023-08-12 13:23:55,732 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-12 13:23:55,733 - transform_data_remove_subtotal_col - INFO - Column is numeric: balance
+2023-08-12 13:23:55,744 - transform_data_remove_subtotal_col - INFO - Last row: 19996.5
+2023-08-12 13:23:55,745 - transform_data_remove_subtotal_col - INFO - Subtotal column found: balance
+2023-08-12 13:23:55,745 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: balance
+2023-08-12 13:23:55,752 - transform_data_rename_percentage - WARNING - No '%' column found. Nothing renamed.
+2023-08-12 13:23:57,147 - transform_data_rename_hash - INFO - Rows dropped where '#' column is NaN.
+2023-08-12 13:23:57,147 - transform_data_rename_hash - INFO - Phone column renamed.
+2023-08-12 13:23:57,149 - transform_data_phone_hyphens - WARNING - Phone column does not contain ten numerical digits. Nothing formatted.
+2023-08-12 13:23:57,149 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174066452.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 173273508.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174114634.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174429391.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174444526.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174494461.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 174497634.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 176713346.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 177134983.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 179101855.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 179103165.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 179104040.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 178423881.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 178424110.0
+2023-08-12 13:23:57,150 - transform_data_phone_hyphens - WARNING - Irregular phone number: 178427018.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 181486910.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 181208726.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 182066478.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 181294527.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 182921253.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 182921611.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 182865976.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 183535514.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 184567615.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 184567716.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 185249420.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 185250369.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 185256301.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 185319607.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 185320438.0
+2023-08-12 13:23:57,151 - transform_data_phone_hyphens - WARNING - Irregular phone number: 184589268.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 185314791.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 187178761.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 187181838.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 187505478.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 187505563.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 187865729.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 187866454.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 188680231.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 188388505.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 188388560.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 189032739.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 191582644.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 190760778.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 191847878.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 193984645.0
+2023-08-12 13:23:57,152 - transform_data_phone_hyphens - WARNING - Irregular phone number: 191249287.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 191251525.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 191252294.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 193220215.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 192100130.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 192445785.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 192446675.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 192210054.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 192210589.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 193612375.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 192505013.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 194684716.0
+2023-08-12 13:23:57,153 - transform_data_phone_hyphens - WARNING - Irregular phone number: 194104956.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 194146580.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 194685062.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 194504651.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 195448595.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 195481134.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 195020433.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 197344996.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 196380239.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 196833596.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 196479242.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 196511646.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 197466439.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 197710907.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 197050537.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 197088116.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 197088205.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 198132984.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 198133685.0
+2023-08-12 13:23:57,154 - transform_data_phone_hyphens - WARNING - Irregular phone number: 197314269.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 197942071.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 197962520.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 198920391.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 198920635.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 198130853.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 198130929.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 198133871.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 199884595.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 198779279.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 198779398.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 200328235.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 200329209.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 199594873.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 199594947.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 200341308.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 200972469.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 199885700.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 199932318.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 200335211.0
+2023-08-12 13:23:57,155 - transform_data_phone_hyphens - WARNING - Irregular phone number: 200220576.0
+2023-08-12 13:23:57,156 - transform_data_phone_hyphens - WARNING - Irregular phone number: 200773544.0
+2023-08-12 13:23:57,156 - transform_data_phone_hyphens - WARNING - Irregular phone number: 200973102.0
+2023-08-12 13:23:57,165 - stage_data_for_ingest - INFO - Processed data written to CSV file.
+2023-08-12 13:23:57,215 - ingest_data_postgres - INFO - Successfully CONNected to PostgreSQL database: historical_reports_2022
+2023-08-12 13:23:57,215 - root - INFO - Attempting to write data to PostgreSQL table: recall_2022
+2023-08-12 13:23:57,315 - root - INFO - Successfully Wrote data to PostgreSQL table: recall_2022
+2023-08-12 13:23:57,315 - __main__ - INFO - Pipeline completed.
