@@ -76,8 +76,8 @@ def process_csv_file(csv_path, title, parent_dir):
        
     # rename the '#' column to 'phone'
     transform_data_rename_hash.transform_data_rename_hash(df)
-    # ad hoc transformation, ability to add any new columns needed
-    transform_data_add_col.transform_data_add_col(df)
+    # OPTIONAL: ad hoc transformation, ability to add any new columns needed
+    # transform_data_add_col.transform_data_add_col(df)
     # transformations complete, time to stage the data for ingest
     df = stage_data_for_ingest.stage_data_for_ingest(df, title, parent_dir)
     ic(df.head())

@@ -1,0 +1,50 @@
+2023-08-17 07:25:42,481 - transform_data_delete_blank_cols - INFO - Deleted blank column: [Unnamed: 0]
+2023-08-17 07:25:43,472 - transform_data_delete_blank_cols - INFO - Deleted blank column: [Unnamed: 12]
+2023-08-17 07:25:43,505 - transform_data_currency - INFO - Dollar columns found: ['amount', 'balance']
+2023-08-17 07:25:43,506 - transform_data_currency - WARNING - Failed to convert column 'amount' to float.
+2023-08-17 07:25:43,510 - transform_data_currency - WARNING - The row that failed is:     approval status  age   # payer patient invoice date service date  statement date  amount     balance
+435      NaN    NaN  NaN NaN   NaN     NaN          NaN          NaN             NaN     NaN  $92,637.50
+2023-08-17 07:25:43,510 - transform_data_currency - WARNING -     approval status  age   # payer patient invoice date service date  statement date  amount     balance
+435      NaN    NaN  NaN NaN   NaN     NaN          NaN          NaN             NaN     NaN  $92,637.50
+2023-08-17 07:25:43,514 - transform_data_currency - INFO - Successfully converted column 'balance' to float.
+2023-08-17 07:25:43,531 - transform_data_full_name_to_id - WARNING - The first column is not 'Provider(s)' or 'Patient; Cannot parse name: 
+2023-08-17 07:25:43,531 - transform_data_full_name_to_id - WARNING - Unknown person type, first column will not be dropped.
+2023-08-17 07:25:43,531 - transform_data_remove_subtotal_col - INFO - Column is not numeric: approval
+2023-08-17 07:25:43,531 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-17 07:25:43,531 - transform_data_remove_subtotal_col - INFO - Column is not numeric: status
+2023-08-17 07:25:43,532 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-17 07:25:43,532 - transform_data_remove_subtotal_col - INFO - Column is not numeric: age
+2023-08-17 07:25:43,532 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-17 07:25:43,532 - transform_data_remove_subtotal_col - INFO - Column is not numeric: #
+2023-08-17 07:25:43,532 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-17 07:25:43,532 - transform_data_remove_subtotal_col - INFO - Column is not numeric: payer
+2023-08-17 07:25:43,532 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-17 07:25:43,533 - transform_data_remove_subtotal_col - INFO - Column is not numeric: patient
+2023-08-17 07:25:43,533 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-17 07:25:43,533 - transform_data_remove_subtotal_col - INFO - Column is not numeric: invoice date
+2023-08-17 07:25:43,533 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-17 07:25:43,533 - transform_data_remove_subtotal_col - INFO - Column is not numeric: service date
+2023-08-17 07:25:43,533 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-17 07:25:43,533 - transform_data_remove_subtotal_col - INFO - Column is not numeric: statement date
+2023-08-17 07:25:43,533 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-17 07:25:43,533 - transform_data_remove_subtotal_col - INFO - Column is not numeric: amount
+2023-08-17 07:25:43,534 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-08-17 07:25:43,534 - transform_data_remove_subtotal_col - INFO - Column is numeric: balance
+2023-08-17 07:25:43,546 - transform_data_remove_subtotal_col - INFO - Last row: 92637.5
+2023-08-17 07:25:43,546 - transform_data_remove_subtotal_col - INFO - Subtotal column found: balance
+2023-08-17 07:25:43,546 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: balance
+2023-08-17 07:25:43,553 - transform_data_rename_percentage - WARNING - No '%' column found. Nothing renamed.
+2023-08-17 07:25:45,542 - transform_data_rename_hash - INFO - Rows about to be dropped where '#' column is NaN:
+2023-08-17 07:25:45,555 - transform_data_rename_hash - INFO - Empty DataFrame
+Columns: [approval, status, age, #, payer, patient, invoice date, service date, statement date, amount, balance]
+Index: []
+2023-08-17 07:25:45,557 - transform_data_rename_hash - INFO - Successfully dropped rows where '#' column is NaN.
+2023-08-17 07:25:45,557 - transform_data_rename_hash - INFO - Phone column renamed.
+2023-08-17 07:25:45,562 - transform_data_add_col - INFO - New column name is: company
+2023-08-17 07:25:45,562 - transform_data_add_col - INFO - New column values are: EyeMed
+2023-08-17 07:25:45,562 - transform_data_add_col - INFO - Added new column named: company with values: EyeMed
+2023-08-17 07:25:45,572 - stage_data_for_ingest - INFO - Processed data written to CSV file.
+2023-08-17 07:25:45,624 - ingest_data_postgres - INFO - Successfully CONNected to PostgreSQL database: reports_2023
+2023-08-17 07:25:45,624 - root - INFO - Attempting to write data to PostgreSQL table: recall_2023
+2023-08-17 07:25:45,750 - root - INFO - Successfully Wrote data to PostgreSQL table: recall_2023
+2023-08-17 07:25:45,751 - __main__ - INFO - Pipeline completed.

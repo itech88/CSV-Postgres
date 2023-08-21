@@ -7,7 +7,7 @@ logger = configure_logging(__name__)
 @timer
 def transform_data_currency(df):
     # define a list of column names from Revolution reports that contain dollar amounts
-    dollar_cols = ["gross", "discounts", "taxes", "adjustments", "net", "amount", "balance"]
+    dollar_cols = ["gross", "discounts", "taxes", "adjustments", "net", "amount", "balance", "total $ paid"]
     # convert the column names to lowercase and save
     df.columns = df.columns.str.lower()
     # compare the df.columns to the dollar_cols list and return a list of columns that are in both

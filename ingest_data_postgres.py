@@ -4,6 +4,7 @@ import pandas as pd
 import os
 from timer_decorator import timer
 from logging_config import configure_logging
+from config import db_save_type
 logger = configure_logging(__name__)
 
 # from config import un_file_name, pw_file_name, database_file_name
@@ -33,6 +34,9 @@ def get_username_password():
 def ingest_data_postgres(df, table_name):
     # get the username and password
     username, password, database = get_username_password()
+    with open(db_save_type, "r") as file:
+        table_mod = file.readline().strip()  # assuming the column name is on the first line
+        logger.info(f"Database table instruction: {table_mod}")
 
     DATABASE_URI = (
         "postgresql+psycopg2://"
@@ -53,7 +57,7 @@ def ingest_data_postgres(df, table_name):
         df.to_sql(
             table_name,
             engine,
-            if_exists="append",  # If the table already exists, it will replace it.
+            if_exists=table_mod,  # If the table already exists, read the instruction to how to mod table
             index=False,  # Not writing the DataFrame's index to the database
             method="multi",  # Insert data in chunks
         )
