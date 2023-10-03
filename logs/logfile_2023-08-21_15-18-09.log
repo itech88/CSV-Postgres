@@ -1,0 +1,19 @@
+2023-08-21 15:18:10,256 - transform_data_currency - INFO - No dollar columns found in the report
+2023-08-21 15:19:02,234 - transform_data_full_name_to_id - INFO - Column: patients is: patient
+2023-08-21 15:19:29,332 - transform_data_full_name_to_id - INFO - Columns dropped: Index(['patients'], dtype='object')
+2023-08-21 15:19:44,812 - transform_data_add_person_id_column - INFO - Added 'patient_id' column with default values.
+2023-08-21 15:19:48,386 - transform_data_remove_subtotal_col - INFO - Column is not numeric: patient_id
+2023-08-21 15:19:48,386 - transform_data_remove_subtotal_col - INFO - Last row: Unknown
+2023-08-21 15:19:48,387 - transform_data_remove_subtotal_col - INFO - Column is numeric: total payments
+2023-08-21 15:19:48,419 - transform_data_remove_subtotal_col - INFO - Last row: 2430
+2023-08-21 15:19:48,420 - transform_data_remove_subtotal_col - INFO - Subtotal column found: total payments
+2023-08-21 15:19:48,422 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: total payments
+2023-08-21 15:19:48,431 - transform_data_rename_percentage - INFO - Percentage column renamed.
+2023-08-21 15:19:48,434 - transform_data_percentage_to_int - INFO - Percentage column converted to integers.
+2023-08-21 15:19:48,434 - transform_data_rename_hash - WARNING - No '#' column found. Nothing renamed.
+2023-08-21 15:20:02,576 - stage_data_for_ingest - INFO - Processed data written to CSV file.
+2023-08-21 15:20:20,344 - ingest_data_postgres - INFO - Database table instruction: replace
+2023-08-21 15:20:20,401 - ingest_data_postgres - INFO - Successfully CONNected to PostgreSQL database: historical_reports_2022
+2023-08-21 15:20:20,402 - root - INFO - Attempting to write data to PostgreSQL table: receipts_by_patient
+2023-08-21 15:20:20,667 - root - INFO - Successfully Wrote data to PostgreSQL table: receipts_by_patient
+2023-08-21 15:20:20,667 - __main__ - INFO - Pipeline completed.

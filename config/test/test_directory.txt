@@ -1,0 +1,2 @@
+# this is where we put the directory for the tests
+# i.e. /Users/Documents/Secure/RevolutionDir/test/

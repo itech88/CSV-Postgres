@@ -14,11 +14,12 @@ from config import parent_dir, input_path, input_filename
 
 # delete blank cols
 import transform_data_delete_blank_cols
+import transform_data_lowercase_cols
 import transform_data_currency
 from transform_data_remove_subtotal_col import transform_data_remove_subtotal_col
-import transform_data_full_name_to_id # transform_person_type_to_id will be encapsulated in transform_data_full_name_to_id
-import transform_data_rename_percentage # transform_data_percentage_to_int will be encapsulated in transform_data_rename_percentage
-import transform_data_rename_hash # transform_data_phone_format will be encapsulated in transform_data_rename_hash
+import transform_data_full_name_to_id # transform_person_type_to_id will be encapsulated 
+import transform_data_rename_percentage # transform_data_percentage_to_int will be encapsulated
+import transform_data_rename_hash # transform_data_phone_format will be encapsulated
 import transform_data_add_col
 import stage_data_for_ingest
 import ingest_data_postgres
@@ -59,9 +60,10 @@ def process_csv_file(csv_path, title, parent_dir):
     # read the data from the CSV file
     df = pd.read_csv(csv_path)
 
-    # delete blank columns
     transform_data_delete_blank_cols.transform_data_delete_blank_cols(df)  
     ic(df.head())
+    # lowercase all columns
+    transform_data_lowercase_cols.transform_data_lowercase_cols(df)
     # identify all the currency columns and remove dollar signs
     transform_data_currency.transform_data_currency(df)
     

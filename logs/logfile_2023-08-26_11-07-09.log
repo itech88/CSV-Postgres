@@ -1,0 +1,24 @@
+2023-08-26 11:07:10,108 - transform_data_currency - INFO - Dollar columns found: ['gross', 'discounts', 'taxes', 'adjustments', 'net']
+2023-08-26 11:07:10,109 - transform_data_currency - INFO - Successfully converted column 'gross' to float.
+2023-08-26 11:07:10,110 - transform_data_currency - INFO - Successfully converted column 'discounts' to float.
+2023-08-26 11:07:10,110 - transform_data_currency - INFO - Successfully converted column 'taxes' to float.
+2023-08-26 11:07:10,110 - transform_data_currency - INFO - Successfully converted column 'adjustments' to float.
+2023-08-26 11:07:10,110 - transform_data_currency - INFO - Successfully converted column 'net' to float.
+2023-08-26 11:07:10,117 - transform_data_full_name_to_id - INFO - Column: providers is person type: provider
+2023-08-26 11:07:10,121 - transform_data_full_name_to_id - INFO - Columns dropped: Index(['providers'], dtype='object')
+2023-08-26 11:07:10,121 - transform_data_add_person_id_column - INFO - Added 'employee_id' column with default values.
+2023-08-26 11:07:10,121 - transform_data_remove_subtotal_col - INFO - Column is not numeric: employee_id
+2023-08-26 11:07:10,121 - transform_data_remove_subtotal_col - INFO - Last row: Unknown
+2023-08-26 11:07:10,121 - transform_data_remove_subtotal_col - INFO - Column is numeric: qty
+2023-08-26 11:07:10,132 - transform_data_remove_subtotal_col - INFO - Last row: 4340
+2023-08-26 11:07:10,133 - transform_data_remove_subtotal_col - INFO - Subtotal column found: qty
+2023-08-26 11:07:10,133 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: qty
+2023-08-26 11:07:10,139 - transform_data_rename_percentage - INFO - Percentage column renamed.
+2023-08-26 11:07:10,140 - transform_data_percentage_to_int - INFO - Percentage column converted to integers.
+2023-08-26 11:07:10,140 - transform_data_rename_hash - WARNING - No '#' column found. Nothing renamed.
+2023-08-26 11:07:10,146 - stage_data_for_ingest - INFO - Processed data written to CSV file.
+2023-08-26 11:07:10,159 - ingest_data_postgres - INFO - Database table instruction: replace
+2023-08-26 11:07:10,197 - ingest_data_postgres - INFO - Successfully CONNected to PostgreSQL database: historical_reports_2022
+2023-08-26 11:07:10,197 - root - INFO - Attempting to write data to PostgreSQL table: services_by_provider
+2023-08-26 11:07:10,259 - root - INFO - Successfully Wrote data to PostgreSQL table: services_by_provider
+2023-08-26 11:07:10,260 - __main__ - INFO - Pipeline completed.

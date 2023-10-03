@@ -13,7 +13,7 @@ def transform_data_full_name_to_id(df):
     name_columns = ['provider', 'providers', 'patient', 'patients']
     
     # Mapping column names to respective person types to avoid repetitive string checks.
-    col_to_person_type = {
+    column_to_person_type_map = {
         'provider': 'provider',
         'providers': 'provider',
         'patient': 'patient',
@@ -24,11 +24,9 @@ def transform_data_full_name_to_id(df):
     cols_to_process = df.columns.intersection(name_columns)
     detected_types = set()  # To keep track of all person types detected in the dataframe.
 
-    for col in cols_to_process:
-        col_lower = col.lower()  # Convert column name to lowercase for standard comparison.
-        
+    for col in cols_to_process:       
         # Identify person type for the given column.
-        person_type = col_to_person_type.get(col_lower)
+        person_type = column_to_person_type_map.get(col)
         if person_type:
             detected_types.add(person_type)
             logger.info(f'Column: {col} is person type: {person_type}')

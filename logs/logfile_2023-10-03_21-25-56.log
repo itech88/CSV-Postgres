@@ -1,0 +1,3 @@
+2023-10-03 21:25:56,218 - transform_data_lowercase_cols - INFO - All columns have been lowercased.
+2023-10-03 21:25:56,226 - transform_data_currency - INFO - Dollar columns found: ['total $ paid']
+2023-10-03 21:25:56,227 - transform_data_currency - INFO - Successfully converted column 'total $ paid' to float.
