@@ -1,8 +1,0 @@
-employee_id,qty,gross,discounts,taxes,adjustments,net,percentage,last_name,first_name
-Unknown,3636,273671.5,-4743.0,0.0,0.0,268928.5,39,Tran,Helen
-Unknown,576,44634.0,-212.0,0.0,0.0,44422.0,6,VU,DAWN
-Unknown,21,1796.0,-104.0,0.0,0.0,1692.0,0,Singla,Abhya
-Unknown,24,1871.0,-16.0,0.0,0.0,1855.0,0,Shaghoyan,Karine
-Unknown,15,507.5,-32.5,0.0,0.0,475.0,0,NGHIEM,JANET
-Unknown,4659,375396.0,-3911.5,0.0,0.0,371484.5,54,Baker,Monica
-Unknown,0,0.0,0.0,0.0,0.0,0.0,0,,
