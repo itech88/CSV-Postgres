@@ -30,3 +30,12 @@ this is mirroring getting into microservers and/or airflow/another platform
 emphasize helper libraries
 Setup extensive logging of each microfunction
 Uses icecream for debugging
+
+DOCKER COMMANDS
+1. docker must be installed on local machine
+2. Requirements.txt has all libraries and dependencies
+3. docker build -t <image_name> .
+4. Configure all the files to your specific testing in config subdirectory before running docker
+4. Mount the volumes for config, files_to_consume, and logs folders.
+5. docker run -v /Users/itech88/Desktop/Projects/Palmdale/Python/revolution_report_transform/files_to_consume:/app/files_to_consume -v /Users/itech88/Desktop/Projects/Palmdale/Python/revolution_report_transform/logs:/app/logs -v /Users/itech88/Desktop/Projects/Palmdale/Python/revolution_report_transform/config:/app/config -p 4000:80 revolution_pipeline
+
