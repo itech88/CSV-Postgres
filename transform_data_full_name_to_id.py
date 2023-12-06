@@ -33,8 +33,13 @@ def transform_data_full_name_to_id(df):
         else:
             logger.warning(f'Column was in named_columns list, but was not identified: {col}')
 
-    # Split the columns and create new ones for first name and last name.
-    df[['last_name', 'first_name']] = df[cols_to_process].stack().str.split(', ', expand=True).reset_index(level=1, drop=True)
+    # check to ensure cols_to_process is not empty and contain strings
+    if cols_to_process.any() and df[cols_to_process].applymap(lambda x: isinstance(x, str)).all().all():
+        # Split the columns and create new ones for first name and last name.
+        df[['last_name', 'first_name']] = df[cols_to_process].stack().str.split(', ', expand=True).reset_index(level=1, drop=True)
+    else:
+        logger.warning("No valid string columns to process.")
+   
     
     # Drop the original columns after processing.
     if cols_to_process.any():

@@ -1,0 +1,7 @@
+2023-11-13 20:12:48,223 - transform_data_lowercase_cols - INFO - All columns have been lowercased.
+2023-11-13 20:12:48,232 - transform_data_currency - INFO - Dollar columns found: ['gross', 'discounts', 'taxes', 'adjustments', 'net']
+2023-11-13 20:12:48,232 - transform_data_currency - INFO - Successfully converted column 'gross' to float.
+2023-11-13 20:12:48,233 - transform_data_currency - INFO - Successfully converted column 'discounts' to float.
+2023-11-13 20:12:48,234 - transform_data_currency - INFO - Successfully converted column 'taxes' to float.
+2023-11-13 20:12:48,234 - transform_data_currency - INFO - Successfully converted column 'adjustments' to float.
+2023-11-13 20:12:48,235 - transform_data_currency - INFO - Successfully converted column 'net' to float.

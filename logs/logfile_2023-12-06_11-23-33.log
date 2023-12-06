@@ -1,0 +1,28 @@
+2023-12-06 11:23:33,931 - transform_data_lowercase_cols - INFO - All columns have been lowercased.
+2023-12-06 11:23:33,939 - transform_data_currency - INFO - Dollar columns found: ['gross', 'discounts', 'taxes', 'adjustments', 'net']
+2023-12-06 11:23:33,940 - transform_data_currency - INFO - Successfully converted column 'gross' to float.
+2023-12-06 11:23:33,940 - transform_data_currency - INFO - Successfully converted column 'discounts' to float.
+2023-12-06 11:23:33,940 - transform_data_currency - INFO - Successfully converted column 'taxes' to float.
+2023-12-06 11:23:33,941 - transform_data_currency - INFO - Successfully converted column 'adjustments' to float.
+2023-12-06 11:23:33,941 - transform_data_currency - INFO - Successfully converted column 'net' to float.
+2023-12-06 11:23:33,949 - transform_data_full_name_to_id - WARNING - No valid string columns to process.
+2023-12-06 11:23:33,949 - transform_data_full_name_to_id - INFO - No columns dropped, columns did not match in ['provider', 'providers', 'patient', 'patients']
+2023-12-06 11:23:33,949 - transform_data_full_name_to_id - WARNING - No valid person type detected for ID transformation.
+2023-12-06 11:23:33,949 - transform_data_remove_subtotal_col - INFO - Column is not numeric: item
+2023-12-06 11:23:33,949 - transform_data_remove_subtotal_col - INFO - Last row: nan
+2023-12-06 11:23:33,949 - transform_data_remove_subtotal_col - INFO - Column is numeric: qty
+2023-12-06 11:23:33,961 - transform_data_remove_subtotal_col - INFO - Last row: 733
+2023-12-06 11:23:33,963 - transform_data_remove_subtotal_col - INFO - Subtotal column found: qty
+2023-12-06 11:23:33,964 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: qty
+2023-12-06 11:23:33,973 - transform_data_rename_percentage - INFO - Percentage column renamed.
+2023-12-06 11:23:33,974 - transform_data_percentage_to_int - INFO - Percentage column converted to integers.
+2023-12-06 11:23:33,974 - transform_data_rename_hash - WARNING - No '#' column found. Nothing renamed.
+2023-12-06 11:23:33,984 - stage_data_for_ingest - INFO - Read parent directory: ./files_to_consume
+2023-12-06 11:23:33,986 - stage_data_for_ingest - INFO - Resolved absolute parent directory: /Users/itech88/Desktop/Projects/Palmdale/Python/revolution_report_transform/./files_to_consume
+2023-12-06 11:23:33,987 - stage_data_for_ingest - INFO - Clean directory path: ./files_to_consume/Clean_Layer
+2023-12-06 11:23:33,989 - stage_data_for_ingest - INFO - Output filename: q3_comp_exams-Processed.csv
+2023-12-06 11:23:33,990 - stage_data_for_ingest - INFO - Processed data written to CSV file.
+2023-12-06 11:23:34,003 - ingest_data_postgres - INFO - Database table instruction: replace
+2023-12-06 11:23:34,107 - root - INFO - SUCCESS!!!! Wrote data to PostgreSQL table: q3_comp_exams
+2023-12-06 11:23:34,107 - root - INFO - Database URI postgresql+psycopg2://postgres:08012022mtbpostgresDOCKER@localhost:5432/reports_2023
+2023-12-06 11:23:34,107 - __main__ - INFO - Pipeline completed.

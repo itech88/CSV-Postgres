@@ -4,10 +4,6 @@ FROM python:3.10-bookworm
 # Set the working directory in the container
 WORKDIR /app
 
-# Create logs and files_to_consume directories
-RUN mkdir -p /app/logs
-RUN mkdir -p /app/files_to_consume
-
 # Copy the requirements.txt into the container at /app
 COPY requirements.txt /app/
 

@@ -3,6 +3,7 @@ install() # this installs ic project wise to other modules
 from timer_decorator import timer
 import pandas as pd
 import os
+os.chdir(os.path.dirname(os.path.abspath(__file__))) # set the working directory to where this script is located
 from logging_config import configure_logging
 logger = configure_logging(__name__)
 from config import parent_dir, input_path, input_filename

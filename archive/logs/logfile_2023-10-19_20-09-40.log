@@ -1,0 +1,31 @@
+2023-10-19 20:09:41,104 - transform_data_lowercase_cols - INFO - All columns have been lowercased.
+2023-10-19 20:09:41,113 - transform_data_currency - INFO - Dollar columns found: ['gross', 'discounts', 'taxes', 'adjustments', 'net']
+2023-10-19 20:09:41,114 - transform_data_currency - INFO - Successfully converted column 'gross' to float.
+2023-10-19 20:09:41,114 - transform_data_currency - INFO - Successfully converted column 'discounts' to float.
+2023-10-19 20:09:41,115 - transform_data_currency - INFO - Successfully converted column 'taxes' to float.
+2023-10-19 20:09:41,115 - transform_data_currency - INFO - Successfully converted column 'adjustments' to float.
+2023-10-19 20:09:41,115 - transform_data_currency - INFO - Successfully converted column 'net' to float.
+2023-10-19 20:09:41,127 - transform_data_full_name_to_id - INFO - Column: providers is person type: provider
+2023-10-19 20:09:41,129 - transform_data_full_name_to_id - INFO - Columns dropped: Index(['providers'], dtype='object')
+2023-10-19 20:09:41,129 - transform_data_add_person_id_column - INFO - Added 'employee_id' column with default values.
+2023-10-19 20:09:41,130 - transform_data_remove_subtotal_col - INFO - Column is not numeric: employee_id
+2023-10-19 20:09:41,130 - transform_data_remove_subtotal_col - INFO - Last row: Unknown
+2023-10-19 20:09:41,130 - transform_data_remove_subtotal_col - INFO - Column is numeric: qty
+2023-10-19 20:09:41,148 - transform_data_remove_subtotal_col - INFO - Last row: 8931
+2023-10-19 20:09:41,150 - transform_data_remove_subtotal_col - INFO - Subtotal column found: qty
+2023-10-19 20:09:41,151 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: qty
+2023-10-19 20:09:41,162 - transform_data_rename_percentage - INFO - Percentage column renamed.
+2023-10-19 20:09:41,163 - transform_data_percentage_to_int - INFO - Percentage column converted to integers.
+2023-10-19 20:09:41,163 - transform_data_rename_hash - WARNING - No '#' column found. Nothing renamed.
+2023-10-19 20:09:41,175 - stage_data_for_ingest - INFO - Read parent directory: ./files_to_consume
+2023-10-19 20:09:41,177 - stage_data_for_ingest - INFO - Resolved absolute parent directory: /app/./files_to_consume
+2023-10-19 20:09:41,179 - stage_data_for_ingest - INFO - Clean directory path: ./files_to_consume/Clean_Layer
+2023-10-19 20:09:41,182 - stage_data_for_ingest - INFO - Output filename: product_by_provider-Processed.csv
+2023-10-19 20:09:41,184 - stage_data_for_ingest - INFO - Processed data written to CSV file.
+2023-10-19 20:09:41,203 - ingest_data_postgres - INFO - Database table instruction: replace
+2023-10-19 20:09:41,236 - ingest_data_postgres - INFO - Successfully CONNected to PostgreSQL database: historical_reports_2022
+2023-10-19 20:09:41,236 - root - INFO - Attempting to write data to PostgreSQL table: product_by_provider
+2023-10-19 20:09:41,253 - root - ERROR - SQLAlchemy error occurred: (psycopg2.OperationalError) could not translate host name "postgres_palmdale" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-10-19 20:09:41,254 - __main__ - INFO - Pipeline completed.

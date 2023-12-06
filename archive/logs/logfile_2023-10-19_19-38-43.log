@@ -1,0 +1,33 @@
+2023-10-19 19:38:43,398 - transform_data_lowercase_cols - INFO - All columns have been lowercased.
+2023-10-19 19:38:43,407 - transform_data_currency - INFO - Dollar columns found: ['gross', 'discounts', 'taxes', 'adjustments', 'net']
+2023-10-19 19:38:43,408 - transform_data_currency - INFO - Successfully converted column 'gross' to float.
+2023-10-19 19:38:43,409 - transform_data_currency - INFO - Successfully converted column 'discounts' to float.
+2023-10-19 19:38:43,409 - transform_data_currency - INFO - Successfully converted column 'taxes' to float.
+2023-10-19 19:38:43,410 - transform_data_currency - INFO - Successfully converted column 'adjustments' to float.
+2023-10-19 19:38:43,410 - transform_data_currency - INFO - Successfully converted column 'net' to float.
+2023-10-19 19:38:43,421 - transform_data_full_name_to_id - INFO - Column: providers is person type: provider
+2023-10-19 19:38:43,425 - transform_data_full_name_to_id - INFO - Columns dropped: Index(['providers'], dtype='object')
+2023-10-19 19:38:43,425 - transform_data_add_person_id_column - INFO - Added 'employee_id' column with default values.
+2023-10-19 19:38:43,425 - transform_data_remove_subtotal_col - INFO - Column is not numeric: employee_id
+2023-10-19 19:38:43,425 - transform_data_remove_subtotal_col - INFO - Last row: Unknown
+2023-10-19 19:38:43,426 - transform_data_remove_subtotal_col - INFO - Column is numeric: qty
+2023-10-19 19:38:43,442 - transform_data_remove_subtotal_col - INFO - Last row: 8931
+2023-10-19 19:38:43,445 - transform_data_remove_subtotal_col - INFO - Subtotal column found: qty
+2023-10-19 19:38:43,446 - transform_data_remove_subtotal_col - INFO - Subtotal column removed: qty
+2023-10-19 19:38:43,457 - transform_data_rename_percentage - INFO - Percentage column renamed.
+2023-10-19 19:38:43,457 - transform_data_percentage_to_int - INFO - Percentage column converted to integers.
+2023-10-19 19:38:43,458 - transform_data_rename_hash - WARNING - No '#' column found. Nothing renamed.
+2023-10-19 19:38:43,466 - stage_data_for_ingest - INFO - Read parent directory: ./files_to_consume
+2023-10-19 19:38:43,468 - stage_data_for_ingest - INFO - Clean directory path: ./files_to_consume/Clean_Layer
+2023-10-19 19:38:43,470 - stage_data_for_ingest - INFO - Output filename: product_by_provider-Processed.csv
+2023-10-19 19:38:43,473 - stage_data_for_ingest - INFO - Processed data written to CSV file.
+2023-10-19 19:38:43,493 - ingest_data_postgres - INFO - Database table instruction: replace
+2023-10-19 19:38:43,534 - ingest_data_postgres - INFO - Successfully CONNected to PostgreSQL database: historical_reports_2022
+2023-10-19 19:38:43,535 - root - INFO - Attempting to write data to PostgreSQL table: product_by_provider
+2023-10-19 19:38:43,542 - root - ERROR - SQLAlchemy error occurred: (psycopg2.OperationalError) connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (::1), port 5432 failed: Cannot assign requested address
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2023-10-19 19:38:43,543 - __main__ - INFO - Pipeline completed.
